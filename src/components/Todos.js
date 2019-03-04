@@ -11,7 +11,7 @@ class Todos extends Component {
     //which are todoitems
     //so while mapping through every todo we pass it as a prop to Todoitem
     return this.props.todos.map((todo) => (
-      <TodoItem  key={todo.id} todo={todo} markCompleted={this.props.markCompleted}/>
+      <TodoItem  key={todo.id} todo={todo} markCompleted={this.props.markCompleted} deleteTodo={this.props.deleteTodo}/>
     ))
   }
 }
