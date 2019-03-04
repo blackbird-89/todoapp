@@ -22,12 +22,16 @@ class App extends Component {
       }
     ]
   }
+
+  markCompleted = (id) => {
+    console.log(id)
+  }
   render() {
     //Here we assign props from the state to Todos(as an attribute)
    // console.log(this.state.todos)
     return (
       <div className="App">
-      <Todos todos={this.state.todos}/>       
+      <Todos todos={this.state.todos} markCompleted={this.markCompleted}/>       
       </div>
     );
   }
