@@ -46,6 +46,10 @@ class App extends Component {
     })
   }
 
+  addTodo = (title) => {
+    console.log(title);
+  }
+
   render() {
     //Here we assign props from the state to Todos(as an attribute)
     // console.log(this.state.todos)
@@ -53,7 +57,7 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <Header />
-          <AddTodo />
+          <AddTodo addTodo={this.addTodo} />
           <Todos todos={this.state.todos} markCompleted={this.markCompleted} deleteTodo={this.deleteTodo} />
         </div>
       </div>
