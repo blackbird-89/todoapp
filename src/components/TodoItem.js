@@ -15,12 +15,11 @@ export class TodoItem extends Component {
 
 
   render() {
-    const { id, title} = this.props.todo; //so we dont have to write long all the time
+    const { id, title } = this.props.todo; //so we dont have to write long all the time
     //later we bind both this and what we want to save in variable const
     return (
       <div style={this.getStyle()}>
         <p>
-      
           <input type="checkbox" onChange={this.props.markCompleted.bind(this, id)} />{' '}
           {title}</p>
       </div>

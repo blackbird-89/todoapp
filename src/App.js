@@ -21,11 +21,21 @@ class App extends Component {
         completed: false
       }
     ]
+  } 
+
+
+  //here we change the state for this particular one 
+  //that is why we need id
+  markCompleted = (id) => {
+    this.setState( {todos: this.state.todos.map(todo => {
+      if(todo.id === id){
+        todo.completed = !todo.completed //simply toggling
+      }
+      return todo;
+    })});
   }
 
-  markCompleted = (id) => {
-    console.log(id)
-  }
+
   render() {
     //Here we assign props from the state to Todos(as an attribute)
    // console.log(this.state.todos)
