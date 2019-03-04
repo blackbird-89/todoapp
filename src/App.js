@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Todos from './components/Todos';
 import './App.css';
 import Header from './components/layout/Header';
+import AddTodo from './components/AddToDo';
 
 class App extends Component {
   state = {
@@ -38,8 +39,8 @@ class App extends Component {
     });
   }
 
-//we pass in into setstate our state object which is todos
-  deleteTodo = (id) => { 
+  //we pass in into setstate our state object which is todos
+  deleteTodo = (id) => {
     this.setState({
       todos: [...this.state.todos.filter(todo => todo.id !== id)]
     })
@@ -50,8 +51,11 @@ class App extends Component {
     // console.log(this.state.todos)
     return (
       <div className="App">
-      <Header />
-        <Todos todos={this.state.todos} markCompleted={this.markCompleted} deleteTodo={this.deleteTodo} />
+        <div className="container">
+          <Header />
+          <AddTodo />
+          <Todos todos={this.state.todos} markCompleted={this.markCompleted} deleteTodo={this.deleteTodo} />
+        </div>
       </div>
     );
   }
