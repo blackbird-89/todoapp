@@ -8,19 +8,18 @@ export class AddToDo extends Component {
   //this now is component's level state value wil be whatever we type in
   onChange = e => this.setState({ [e.target.name]: e.target.value });
 
-
   //  we need to pass this up just like
   //we did with delete and makecompleted
-  onSubmit = (e) => {
+  onSubmit = e => {
     e.preventDefault();
     this.props.addTodo(this.state.title);
-    //later we set the vaue to nothing/empty
-    this.setState({title: ''});
-  }
+    //later we set the value to nothing/empty
+    this.setState({ title: "" });
+  };
 
   render() {
     return (
-      <form  onSubmit={this.onSubmit} style={{ display: "flex" }}>
+      <form onSubmit={this.onSubmit} style={{ display: "flex" }}>
         <input
           type="text"
           name="title"
